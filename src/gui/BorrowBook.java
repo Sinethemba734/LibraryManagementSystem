@@ -6,7 +6,7 @@ package gui;
 
 /**
  *
- * @author sneth
+ * @author hlulelo
  */
 import java.sql.Connection;
 import java.sql.PreparedStatement;
