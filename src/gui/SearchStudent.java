@@ -24,8 +24,7 @@ public class SearchStudent extends javax.swing.JFrame {
      */
     public SearchStudent() {
         initComponents();
-        this.setLocationRelativeTo(null);
- //centering our GUI
+        this.setLocationRelativeTo(null); //centering our GUI
     }
 
     /**
@@ -485,19 +484,19 @@ public class SearchStudent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SSurnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SSurnameActionPerformed
-        // TODO add your handling code here:
+        // Student Surname Text field
     }//GEN-LAST:event_SSurnameActionPerformed
 
     private void YearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YearActionPerformed
-        // TODO add your handling code here:
+        // Year text field
     }//GEN-LAST:event_YearActionPerformed
 
     private void courseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseActionPerformed
-        // TODO add your handling code here:
+        // Students course text field
     }//GEN-LAST:event_courseActionPerformed
 
     private void FacultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacultyActionPerformed
-        // TODO add your handling code here:
+        // Students Faculty text field
     }//GEN-LAST:event_FacultyActionPerformed
 
     private void SaveBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBNActionPerformed
@@ -516,31 +515,31 @@ public class SearchStudent extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void SEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SEmailActionPerformed
-        // TODO add your handling code here:
+        // Student Email text field
     }//GEN-LAST:event_SEmailActionPerformed
 
     private void SNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SNumberActionPerformed
-        // TODO add your handling code here:
+        // Student Number text fields
     }//GEN-LAST:event_SNumberActionPerformed
 
     private void PhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNumberActionPerformed
-        // TODO add your handling code here:
+        // Students phone number text field
     }//GEN-LAST:event_PhoneNumberActionPerformed
 
     private void SNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SNameActionPerformed
-        // TODO add your handling code here:
+        // Students name text field
     }//GEN-LAST:event_SNameActionPerformed
 
     private void SSurname1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SSurname1ActionPerformed
-        // TODO add your handling code here:
+        // Students surname text field
     }//GEN-LAST:event_SSurname1ActionPerformed
 
     private void Year1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Year1ActionPerformed
-        // TODO add your handling code here:
+        // students year text field
     }//GEN-LAST:event_Year1ActionPerformed
 
     private void ClearBN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearBN1ActionPerformed
-       //clears everything
+       //clears everything in the text fields
         SSurname1.setText("");
         SNumber1.setText("");
         SName1.setText("");
@@ -560,27 +559,27 @@ public class SearchStudent extends javax.swing.JFrame {
     }//GEN-LAST:event_menuActionPerformed
 
     private void SEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SEmail1ActionPerformed
-        // TODO add your handling code here:
+      //Students email text field
     }//GEN-LAST:event_SEmail1ActionPerformed
 
     private void SNumber1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SNumber1ActionPerformed
-        // TODO add your handling code here:
+        // Students number text field
     }//GEN-LAST:event_SNumber1ActionPerformed
 
     private void PhoneNumber1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNumber1ActionPerformed
-        // TODO add your handling code here:
+        // Students phone number text field
     }//GEN-LAST:event_PhoneNumber1ActionPerformed
 
     private void SName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SName1ActionPerformed
-        // TODO add your handling code here:
+        // Students name text field
     }//GEN-LAST:event_SName1ActionPerformed
 
     private void facultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyActionPerformed
-        // TODO add your handling code here:
+        // Students faculty text field
     }//GEN-LAST:event_facultyActionPerformed
 
     private void course1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_course1ActionPerformed
-        // TODO add your handling code here:
+        // Students course text field
     }//GEN-LAST:event_course1ActionPerformed
 
     private void SearchBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBNActionPerformed
@@ -589,13 +588,13 @@ public class SearchStudent extends javax.swing.JFrame {
     String name = SName1.getText().trim();
     String surname = SSurname1.getText().trim();
 
-    // checks if allthe fields are filled
+    // checks if all the fields are filled
     if (studentNumber.isEmpty() || name.isEmpty() || surname.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Please fill in all text fields.", "Input Error", JOptionPane.WARNING_MESSAGE);
         return;
     }
 
-    //searching for student in MySQL
+    //searching for student in MySQL database
     String sql = "SELECT * FROM students WHERE student_number = ? AND name = ? AND surname = ?";
 
     try (Connection connect = DatabaseConnection.getConnection();
@@ -608,10 +607,10 @@ public class SearchStudent extends javax.swing.JFrame {
         ResultSet results = pst.executeQuery();
 
         if (results.next()) {
-            // output this in the availability textfield if student is found
+            // output this in the availability text field if student is found
             availability.setText("Found");
 
-            //Fills the text fields withe values found in the Database
+            //Fills the text fields with values found in the Database
             course1.setText(results.getString("course"));
             Year1.setText(results.getString("year"));
             faculty.setText(results.getString("faculty"));
@@ -623,7 +622,7 @@ public class SearchStudent extends javax.swing.JFrame {
             //output for when student is not found
             availability.setText("Not Found");
 
-            //clear the fields that were filled
+            //clears the fields that were filled
             course1.setText("");
             Year1.setText("");
             faculty.setText("");
