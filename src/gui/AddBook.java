@@ -8,7 +8,7 @@ package gui;
  *
  * @author sneth
  */
-//imports statements for libraries we will need
+//importing statements for libraries we will need
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
