@@ -16,7 +16,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 
-//class that extends a JFrame in order to make GUI
+//class that extends a JFrame in order to make Graphical user interface
 public class login2 extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(login2.class.getName());
